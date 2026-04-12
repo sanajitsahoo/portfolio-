@@ -1,0 +1,93 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sanajit Sahoo — Portfolio</title>
+  <meta name="description" content="Sanajit Sahoo — B.Tech CSE student. Portfolio showcasing projects, skills, internships and contact." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Sanajit Sahoo</h1>
+        <p class="tagline">B.Tech CSE Student • Frontend Developer in progress</p>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#internships">Internships</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fixed top-center profile image -->
+  <div class="fixed-top-center" aria-hidden="false">
+    <img src="assets/images/profile.jpg" alt="Sanajit Sahoo profile photo" class="fixed-photo" />
+  </div>
+
+  <main>
+    <!-- Hero / Profile -->
+    <section id="home" class="hero container">
+      <div class="hero-left">
+        <h2>Hello, I'm <span class="accent">Sanajit</span></h2>
+        <p class="lead">
+          B.Tech CSE student (Brainware University) • Born 2005. I build clean, responsive frontends and learn full‑stack tools.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn outline" href="https://github.com/sanajitsahoo/public/blob/main/Sanajit's%20Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+        </div>
+
+        <ul class="quick-info">
+          <li><strong>Education</strong> Brainware University — 3rd Year</li>
+          <li><strong>Higher Secondary</strong> Malpar Vivekananda Sikshaniketan — 2023</li>
+          <li><strong>Secondary</strong> Kundalpal Kiranbala Vidyamandir — 2021</li>
+        </ul>
+
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/sanajitsahoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Profile card (secondary) -->
+      <aside class="hero-right">
+        <div class="profile-card">
+          <img class="profile-photo" src="assets/images/profile.jpg" alt="Sanajit Sahoo profile photo" />
+          <div class="profile-meta">
+            <h3>Sanajit Sahoo</h3>
+            <p>Frontend-focused developer • Learner of Node.js & Databases</p>
+            <div class="skills-inline">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- rest of the content (projects, about, internships, contact, footer) -->
+    <!-- ... keep the rest of your sections as before ... -->
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Sanajit Sahoo — Built with HTML, CSS & JavaScript</p>
+      <div class="footer-links">
+        <a href="https://github.com/sanajitsahoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Basic client-side validation and demo submit (keep your existing script)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

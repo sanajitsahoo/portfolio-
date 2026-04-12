@@ -1,0 +1,108 @@
+/* style.css (add or replace the relevant parts) */
+
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#4f46e5;
+  --accent-2:#06b6d4;
+  --text:#e6eef6;
+  --radius:12px;
+  --container:1100px;
+  --gap:1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#071025 0%, #071827 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  /* add top padding so fixed image doesn't overlap content */
+  padding-top:84px;
+}
+
+/* Header */
+.site-header{
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  position:sticky;
+  top:0;
+  z-index:30;
+  backdrop-filter: blur(6px);
+}
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:1.25rem 1rem;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+/* Fixed top-center profile image */
+.fixed-top-center{
+  position:fixed;
+  top:12px;                 /* distance from top of viewport */
+  left:50%;
+  transform:translateX(-50%);
+  z-index:60;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:auto;
+}
+.fixed-photo{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,255,255,0.08);
+  box-shadow:0 8px 24px rgba(2,6,23,0.6);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+/* Reduce size on small screens */
+@media (max-width:900px){
+  .fixed-photo{width:64px;height:64px}
+  body{padding-top:72px}
+}
+@media (max-width:600px){
+  .fixed-photo{width:52px;height:52px}
+  body{padding-top:64px}
+}
+
+/* rest of your styles (hero, profile-card, projects, contact, footer) */
+/* keep the styles you already have; below are a few key snippets reused */
+
+.hero{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:var(--gap);
+  align-items:center;
+  padding-top:2rem;
+  padding-bottom:2rem;
+}
+
+/* profile card */
+.profile-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:1rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+}
+.profile-photo{
+  width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.04)
+}
+
+/* keep the rest of your CSS unchanged */
