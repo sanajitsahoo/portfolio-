@@ -1,108 +1,365 @@
-/* style.css (add or replace the relevant parts) */
-
-:root{
-  --bg:#0f1724;
-  --card:#0b1220;
-  --muted:#9aa4b2;
-  --accent:#4f46e5;
-  --accent-2:#06b6d4;
-  --text:#e6eef6;
-  --radius:12px;
-  --container:1100px;
-  --gap:1.25rem;
+:root {
+  --bg: #09101f;
+  --surface: rgba(18, 28, 47, 0.92);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --text: #eef2ff;
+  --muted: #94a3b8;
+  --accent: #7c3aed;
+  --accent-soft: #818cf8;
+  --accent-2: #22d3ee;
+  --border: rgba(255, 255, 255, 0.08);
+  --radius: 24px;
+  --container: 1200px;
+  --gap: 1.5rem;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:linear-gradient(180deg,#071025 0%, #071827 100%);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
-  /* add top padding so fixed image doesn't overlap content */
-  padding-top:84px;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  min-height: 100%;
+}
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 28%),
+              radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.14), transparent 30%),
+              linear-gradient(180deg, #050816 0%, #0f172a 100%);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 92px;
 }
 
-/* Header */
-.site-header{
-  border-bottom:1px solid rgba(255,255,255,0.03);
-  background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
-  position:sticky;
-  top:0;
-  z-index:30;
-  backdrop-filter: blur(6px);
-}
-.container{
-  max-width:var(--container);
-  margin:0 auto;
-  padding:1.25rem 1rem;
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 15%, rgba(124, 58, 237, 0.08), transparent 20%),
+              radial-gradient(circle at 80% 25%, rgba(14, 165, 233, 0.06), transparent 18%);
+  pointer-events: none;
 }
 
-/* Fixed top-center profile image */
-.fixed-top-center{
-  position:fixed;
-  top:12px;                 /* distance from top of viewport */
-  left:50%;
-  transform:translateX(-50%);
-  z-index:60;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  pointer-events:auto;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.fixed-photo{
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid rgba(255,255,255,0.08);
-  box-shadow:0 8px 24px rgba(2,6,23,0.6);
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+a:hover {
+  text-decoration: underline;
 }
 
-/* Reduce size on small screens */
-@media (max-width:900px){
-  .fixed-photo{width:64px;height:64px}
-  body{padding-top:72px}
-}
-@media (max-width:600px){
-  .fixed-photo{width:52px;height:52px}
-  body{padding-top:64px}
+img {
+  display: block;
+  max-width: 100%;
 }
 
-/* rest of your styles (hero, profile-card, projects, contact, footer) */
-/* keep the styles you already have; below are a few key snippets reused */
-
-.hero{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:var(--gap);
-  align-items:center;
-  padding-top:2rem;
-  padding-bottom:2rem;
+button, input, textarea {
+  font: inherit;
 }
 
-/* profile card */
-.profile-card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius:var(--radius);
-  padding:1rem;
-  display:flex;
-  gap:1rem;
-  align-items:center;
-  box-shadow:0 6px 18px rgba(2,6,23,0.6);
-}
-.profile-photo{
-  width:96px;height:96px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.04)
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin: 0 auto;
 }
 
-/* keep the rest of your CSS unchanged */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: rgba(7, 14, 31, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+}
+
+.brand .tagline {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.nav a {
+  color: var(--muted);
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  transition: transform 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--text);
+  background: rgba(124, 58, 237, 0.12);
+  transform: translateY(-1px);
+}
+
+.fixed-top-center {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  border-radius: 999px;
+  padding: 0.25rem;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+}
+
+.fixed-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.18);
+  box-shadow: 0 18px 50px rgba(8, 20, 44, 0.55);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 2rem;
+  align-items: start;
+  padding: 3rem 0 4rem;
+}
+
+.hero-left {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: clamp(2.75rem, 4vw, 4.25rem);
+  line-height: 0.95;
+}
+
+.hero .accent {
+  color: var(--accent);
+}
+
+.lead {
+  max-width: 720px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  white-space: nowrap;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+  color: #fff;
+  box-shadow: 0 18px 45px rgba(124, 58, 237, 0.2);
+}
+
+.btn.primary:hover,
+.btn.primary:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn.outline:hover,
+.btn.outline:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.quick-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.quick-info li {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  color: var(--text);
+}
+
+.quick-info strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #fff;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.hero-right {
+  position: relative;
+}
+
+.profile-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+}
+
+.profile-photo {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  object-fit: cover;
+  border: 3px solid rgba(124, 58, 237, 0.3);
+}
+
+.profile-meta h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.profile-meta p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.skills-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.skills-inline span {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  color: var(--muted);
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text);
+  transition: color 200ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .site-header {
+    padding: 0 0.25rem;
+  }
+
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .header-inner {
+    gap: 0.75rem;
+  }
+}
