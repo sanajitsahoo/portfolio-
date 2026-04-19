@@ -1,11 +1,10 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sanajit Sahoo — Portfolio</title>
-  <meta name="description" content="Sanajit Sahoo — B.Tech CSE student. Portfolio showcasing projects, skills, internships and contact." />
+  <meta name="description" content="Sanajit Sahoo — B.Tech CSE student portfolio." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,81 +12,158 @@
     <div class="container header-inner">
       <div class="brand">
         <h1>Sanajit Sahoo</h1>
-        <p class="tagline">B.Tech CSE Student • Frontend Developer in progress</p>
+        <p class="tagline">B.Tech CSE Student • Frontend Developer</p>
       </div>
-
-      <nav class="nav" aria-label="Primary">
+      <nav class="nav">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#internships">Internships</a>
         <a href="#contact">Contact</a>
+        
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg id="sunIcon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
       </nav>
     </div>
   </header>
 
-  <!-- Fixed top-center profile image -->
-  <div class="fixed-top-center" aria-hidden="false">
-    <img src="assets/images/profile.jpg" alt="Sanajit Sahoo profile photo" class="fixed-photo" />
-  </div>
-
   <main>
-    <!-- Hero / Profile -->
     <section id="home" class="hero container">
+      <div class="hero-profile-wrapper">
+        <img class="hero-profile-img" src="assets/images/Sanajit Sahoo Passport  Size photo.jpg" alt="Sanajit Sahoo" />
+      </div>
+
       <div class="hero-left">
-        <h2>Hello, I'm <span class="accent">Sanajit</span></h2>
+        <h2>Hello, I'm <span class="text-gradient">Sanajit</span></h2>
         <p class="lead">
-          B.Tech CSE student (Brainware University) • Born 2005. I build clean, responsive frontends and learn full‑stack tools.
+          B.Tech CSE student (Brainware University) • Born 2005. I build clean, responsive frontends and learn full-stack tools.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn outline" href="https://github.com/sanajitsahoo/public/blob/main/Sanajit's%20Resume.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a class="btn outline" href="https://github.com/sanajitsahoo/public/blob/main/Sanajit's%20Resume.pdf" target="_blank">Download CV</a>
         </div>
 
         <ul class="quick-info">
-          <li><strong>Education</strong> Brainware University — 3rd Year</li>
-          <li><strong>Higher Secondary</strong> Malpar Vivekananda Sikshaniketan — 2023</li>
-          <li><strong>Secondary</strong> Kundalpal Kiranbala Vidyamandir — 2021</li>
+          <li><strong>Education:</strong> Brainware University — 3rd Year</li>
+          <li><strong>Higher Secondary:</strong> Malpar Vivekananda Sikshaniketan — 2023</li>
+          <li><strong>Secondary:</strong> Kundalpal Kiranbala Vidyamandir — 2021</li>
         </ul>
 
         <div class="socials">
-          <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/sanajitsahoo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333" target="_blank">LinkedIn</a>
+          <a href="https://github.com/sanajitsahoo" target="_blank">GitHub</a>
         </div>
       </div>
-
-      <!-- Profile card (secondary) -->
-      <aside class="hero-right">
-        <div class="profile-card">
-          <img class="profile-photo" src="assets/images/profile.jpg" alt="Sanajit Sahoo profile photo" />
-          <div class="profile-meta">
-            <h3>Sanajit Sahoo</h3>
-            <p>Frontend-focused developer • Learner of Node.js & Databases</p>
-            <div class="skills-inline">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span><span>MongoDB</span>
-            </div>
-          </div>
-        </div>
-      </aside>
     </section>
 
-    <!-- rest of the content (projects, about, internships, contact, footer) -->
-    <!-- ... keep the rest of your sections as before ... -->
+    <section id="about" class="container section">
+      <h2>Profile & Journey</h2>
+      <div class="about-content">
+        
+        <div class="about-block">
+          <h3>About</h3>
+          <p><strong>Identity:</strong> Sanajit Sahoo, born in 2005.</p>
+          <p><strong>Focus:</strong> A frontend-focused developer and B.Tech CSE student.</p>
+          <p><strong>Current Pursuits:</strong> Building clean, responsive frontends while learning full-stack tools (Node.js and databases).</p>
+        </div>
 
+        <div class="about-block">
+          <h3>Background</h3>
+          <ul>
+            <li><strong>Undergraduate:</strong> Currently 3rd-year B.Tech CSE student at Brainware University.</li>
+            <li><strong>Higher Secondary:</strong> Completed in 2023.</li>
+            <li><strong>Secondary:</strong> Completed in 2021.</li>
+          </ul>
+        </div>
+
+        <div class="about-block">
+          <h3>Career Goals</h3>
+          <ul>
+            <li>Master frontend technologies and UI frameworks.</li>
+            <li>Apply AI/ML in software development.</li>
+            <li>Lead impactful tech projects across industries.</li>
+          </ul>
+        </div>
+
+        <div class="about-block">
+          <h3>Skills</h3>
+          <ul>
+            <li>HTML / CSS / JavaScript</li>
+            <li>Node.js</li>
+            <li>MongoDB / MySQL</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-thumb">PP</div>
+          <div class="project-body">
+            <h3>Professional Portfolio</h3>
+            <p>Responsive portfolio built with modern CSS. Showcases projects and skills.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="internships" class="container section">
+      <h2>Internships</h2>
+      <div class="internship">
+        <h3>Agnirath Aerospace & Defence Research</h3>
+        <p>Contributed to Rover Drone Development focused on autonomous navigation systems and ground mobility controls.</p>
+        <p><strong>Contact:</strong> <a href="mailto:" style="color: var(--accent-main); text-decoration: none;">director@agnirath.com</a></p>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2>Get In Touch</h2>
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/xaqajwdd" method="POST">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Sanajit Sahoo — Built with HTML, CSS & JavaScript</p>
+      <p>© Sanajit Sahoo — Crafted with Passion</p>
       <div class="footer-links">
-        <a href="https://github.com/sanajitsahoo" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/sanajitsahoo">GitHub</a>
+        <a href="https://www.linkedin.com/in/sanajit-sahoo-094786333">LinkedIn</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Basic client-side validation and demo submit (keep your existing script)
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
   </script>
 </body>
 </html>
